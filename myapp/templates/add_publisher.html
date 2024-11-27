@@ -1,0 +1,11 @@
+<!-- myapp/templates/add_publisher.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Agregar Editorial</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Guardar</button>
+</form>
+{% endblock %}

@@ -1,0 +1,20 @@
+<!-- myapp/templates/search_books.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Buscar Libro</h2>
+<form method="get">
+    <input type="text" name="q" value="{{ query }}" placeholder="Buscar libro por título">
+    <button type="submit">Buscar</button>
+</form>
+
+{% if books %}
+    <ul>
+    {% for book in books %}
+        <li>{{ book.title }} - {{ book.author.name }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No se encontraron libros.</p>
+{% endif %}
+{% endblock %}
